@@ -59,8 +59,8 @@ class RayCasting:
 
             proj_height = SCREEN_DIST / (depth + 0.0001)
 
-
-            pg.draw.rect(self.game.screen, 'white',
+            color = [255 / (1 + depth ** 5 * 0.00002)] * 3
+            pg.draw.rect(self.game.screen, color,
                          (ray * SCALE, HALF_HEIGHT - proj_height // 2, SCALE, proj_height))
 
 
