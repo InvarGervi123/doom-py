@@ -56,6 +56,9 @@ class RayCasting:
             else:
                 depth = depth_hor
 
+            
+            depth *= math.cos(self.game.player.angle - ray_angle)
+
 
             proj_height = SCREEN_DIST / (depth + 0.0001)
 
