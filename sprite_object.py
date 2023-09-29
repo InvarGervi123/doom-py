@@ -1,11 +1,12 @@
 import pygame as pg
 from settings import *
-import os 
+import os
 from collections import deque
+
 
 class SpriteObject:
     def __init__(self, game, path='resources/sprites/static_sprites/good.png',
-                  pos=(10.5,3.5), scale=0.7, shift=0.27):
+                 pos=(10.5, 3.5), scale=0.7, shift=0.27):
         self.game = game
         self.player = game.player
         self.x, self.y = pos
@@ -52,7 +53,6 @@ class SpriteObject:
         self.get_sprite()
 
 
-
 class AnimatedSprite(SpriteObject):
     def __init__(self, game, path='resources/sprites/animated_sprites/green_light/0.png',
                  pos=(11.5, 3.5), scale=0.8, shift=0.16, animation_time=120):
@@ -78,7 +78,7 @@ class AnimatedSprite(SpriteObject):
         time_now = pg.time.get_ticks()
         if time_now - self.animation_time_prev > self.animation_time:
             self.animation_time_prev = time_now
-            self.aniamtion_trigger = True
+            self.animation_trigger = True
 
     def get_images(self, path):
         images = deque()
