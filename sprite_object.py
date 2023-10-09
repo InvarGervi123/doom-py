@@ -82,7 +82,9 @@ class AnimatedSprite(SpriteObject):
 
     def get_images(self, path):
         images = deque()
-        for file_name in os.listdir(path):
+        for file_name in os.listdir(path):   
+            if file_name == 'desktop.ini':
+                continue         
             if os.path.isfile(os.path.join(path, file_name)):
                 img = pg.image.load(path + '/' + file_name).convert_alpha()
                 images.append(img)
