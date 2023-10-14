@@ -193,7 +193,7 @@ class CacoDemonNPC(NPC):
                   scale=0.7, shift=0.27, animation_time=250):
         super().__init__(game, path, pos, scale, shift, animation_time)
         self.attack_dist = 1.0
-        self.health = 150
+        self.health = 15
         self.attack_damage = 25
         self.speed = 0.05
         self.accuracy = 0.35
@@ -202,7 +202,18 @@ class CyberDemonNPC(NPC):
                   scale=1.0, shift=0.04, animation_time=210):
         super().__init__(game, path, pos, scale, shift, animation_time)
         self.attack_dist = 6
-        self.health = 200
+        self.health = 20
         self.attack_damage = 15
         self.speed = 0.055
         self.accuracy = 0.25
+
+
+class TamiGadolNPC(NPC): ## ##
+    def __init__ (self, game, path='resources/sprites/npc/TamiGadol/0.png', pos=(15.5, 5.0),
+                  scale=1.0, shift=0.14, animation_time=400):
+        super().__init__(game, path, pos, scale, shift, animation_time)
+        self.attack_dist = 10
+        self.health = 1000000
+        self.attack_damage = 1
+        self.speed = 0.09
+        self.accuracy = 1.0
