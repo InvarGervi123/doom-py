@@ -16,7 +16,7 @@ class ObjectHandler:
 
         self.enemies = 20 # npc count
         self.npc_types = [SoldierNPC, CacoDemonNPC, CyberDemonNPC, TamiGadolNPC]
-        self.weights = [7, 2, 1, 20]
+        self.weights = [2, 2, 2, 2] #[7, 2, 1, 2]
         self.restricted_area = {(i, j) for i in range (10) for j in range(10)}
         self.spawn_npc() ###
 
@@ -46,11 +46,19 @@ class ObjectHandler:
                     pos = x, y = randrange(self.game.map.cols), randrange(self.game.map.rows)
                 self.add_npc(npc(self.game, pos=(x + 0.5, y + 0.5)))
 
+    def check_win(self):
+        if not len(self.npc_positions):
+            self.game.object_renderer.win()
+            pg.display.flip()
+            pg.time.delay(1500)
+            self.game.new_game()
+
 
     def update(self):
         self.npc_positions = {npc.map_pos for npc in self.npc_list if npc.alive}
         [sprite.update() for sprite in self.sprite_list]
         [npc.update() for npc in self.npc_list]
+        self.check_win()
 
     def add_npc(self, npc):
         self.npc_list.append(npc)

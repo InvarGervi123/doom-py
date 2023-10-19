@@ -15,7 +15,7 @@ class NPC(AnimatedSprite):
         self.attack_dist = randint(3, 6)
         self.speed = 0.03
         self.size = 10
-        self.health = 100
+        self.health = 10
         self.attack_damage = 10
         self.accuracy = 0.15
         self.alive = True
@@ -213,7 +213,7 @@ class TamiGadolNPC(NPC): ## ##
                   scale=1.0, shift=0.14, animation_time=400):
         super().__init__(game, path, pos, scale, shift, animation_time)
         self.attack_dist = 10
-        self.health = 1000000
+        self.health = 1
         self.attack_damage = 1
         self.speed = 0.09
         self.accuracy = 1.0
