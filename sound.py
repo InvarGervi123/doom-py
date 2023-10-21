@@ -6,9 +6,9 @@ class Sound:
         self.game = game
         pg.mixer.init()
         self.path = 'resources/sound/'
-        self.shotgun = pg.mixer.Sound(self.path + 'shotgun.wav')
+        self.shotgun = pg.mixer.Sound(self.path + 'pear.mp3')   ####self.shotgun = pg.mixer.Sound(self.path + 'shotgun.wav')
         self.npc_pain = pg.mixer.Sound(self.path + 'npc_pain.wav')
         self.npc_death = pg.mixer.Sound(self.path + 'npc_death.wav')
-        self.npc_shot = pg.mixer.Sound(self.path + 'npc_attack.wav')
+        self.npc_shot = pg.mixer.Sound(self.path + 'Lotan says pear.mp3')   #### self.npc_shot = pg.mixer.Sound(self.path + 'npc_attack.wav')
         self.player_pain = pg.mixer.Sound(self.path + 'player_pain.wav')
         self.theme = pg.mixer.Sound(self.path + 'theme.mp3')
