@@ -1,4 +1,4 @@
- doom-py 🕹️
+## doom-py 🕹️
 
 A retro-style DOOM-like shooter game built with Python!
 
